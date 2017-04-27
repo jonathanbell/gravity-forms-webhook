@@ -18,7 +18,7 @@ On the submission of a Gravity Form, check the form's ID. If a set of form IDs s
 
 The data is sent via the POST (HTTP) protocol and the built in [`WP_Http()`](https://developer.wordpress.org/reference/classes/wp_http/) Wordpress POST method. A "normal" PHP listener/endpoint will see the data as a standard `$_POST` array. _Currently, the plugin has only been tested with a PHP listener/endpoint._
 
-The data arrives as key/value pairs in the format: `my_field_label => my_field_value`
+The data arrives as key/value pairs in the format: `my_field_label => my_field_value` Spaces are replaced by an underscore(`_`).
 
 The plugin utilizes the [Gravity Forms gform_after_submission hook](https://www.gravityhelp.com/documentation/article/gform_after_submission/). 
 

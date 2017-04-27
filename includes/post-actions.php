@@ -18,10 +18,12 @@ function gfprwh_post_to_remote($entry, $form) {
       $data_to_send = array();
 
       // Construct a sensible array ($data_to_send) to send to our listener over the Internet. 
-      // Its format will be: 'Field Label' => 'field_value'
+      // Its format will be: 'Field_Label' => 'field_value' (spaces replaced by '_')
       foreach ($form['fields'] as $key => $value) {
-        $data_to_send[$form['fields'][$i]['label']] = $entry[$i + 1];
-        $i++;
+        if (isset($form['fields'][$i]['label']) && isset($entry[$i + 1])) {
+          $data_to_send[$form['fields'][$i]['label']] = $entry[$i + 1];
+          $i++;
+        }
       }
 
       // "Url-ify" the data for the POST request.
@@ -43,7 +45,7 @@ function gfprwh_post_to_remote($entry, $form) {
       
       // HTTP POST the Wordpress way.
       if (!class_exists('WP_Http')) {
-        include_once( ABSPATH . WPINC. '/class-http.php' );
+        include_once(ABSPATH.WPINC.'/class-http.php');
       }
       
       $request = new WP_Http();
