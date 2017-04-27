@@ -93,7 +93,7 @@ function gfprwh_settings_page() {
 
   // The settings form...
   echo '<h1>Gravity Forms Web Hooks</h1>';
-  echo '<p>Add a Gravity Forms Form ID on the left and add a URL endpoint on the right. Whenever data is submitted to the form, the form data will be sent to the URL via HTTP POST.</p><p>It\'s up to the recieving server to verify the data sent to it (in order to aviod Cross-Site Request Forgery). One way to validate/check the authenticity of the POST data would be to check that the data came from this server\'s IP ('.$_SERVER['SERVER_ADDR'].').</p>';
+  echo '<p>Add a Gravity Forms Form ID on the left and add a URL endpoint on the right. Whenever data is submitted to the form, the form data will be sent to the URL via HTTP_POST.</p><p>It\'s up to the recieving server to verify the data sent to it is legitimate (in order to aviod Cross-Site Request Forgery). One way to validate/check the authenticity of the POST data would be to check that the data came from this server\'s IP ('.$_SERVER['SERVER_ADDR'].').</p>';
   echo '<form name="gfprwh_ids" method="post" action="">';
   echo '<input type="hidden" name="'.$hidden_field_name.'" value="Y">';
 
