@@ -20,10 +20,8 @@ function gfprwh_post_to_remote($entry, $form) {
       // Construct a sensible array ($data_to_send) to send to our listener over the Internet. 
       // Its format will be: 'Field_Label' => 'field_value' (spaces replaced by '_')
       foreach ($form['fields'] as $key => $value) {
-        if (isset($form['fields'][$i]['label']) && isset($entry[$i + 1])) {
-          $data_to_send[$form['fields'][$i]['label']] = $entry[$i + 1];
-          $i++;
-        }
+        $data_to_send[$form['fields'][$i]['label']] = (isset($entry[$i + 1]) ? $entry[$i + 1] : '');
+        $i++;
       }
 
       // "Url-ify" the data for the POST request.
