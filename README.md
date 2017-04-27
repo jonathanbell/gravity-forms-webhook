@@ -29,4 +29,4 @@ The plugin utilizes the [Gravity Forms gform_after_submission hook](https://www.
 
 ## Gotchas 
 
-At this time, file fields are not supported. The storage path to the file on the WP server will be sent, but not the actual binary (file) itself. All other (string based) fields seem to be working fine.
+At this time, file fields are not supported. The storage path to the file on the WP server will be sent, but not the actual binary (file) itself. Additionally, checkboxes return an array (not a string). As such they may have issues. All other (string based) fields seem to be working fine.
