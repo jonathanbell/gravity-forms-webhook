@@ -1,4 +1,4 @@
-Gravity Forms Post-receive Web Hook Add-On
+Gravity Forms Post-receive Web Hook Add-on
 ==========================================
 
 Sends Gravity Forms form submission data to a remote URI endpoint after form submission **without Zapier**.
